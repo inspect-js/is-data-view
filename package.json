@@ -1,0 +1,32 @@
+{
+	"name": "is-data-view",
+	"version": "0.0.0",
+	"description": "Is this value a JS DataView? This module works cross-realm/iframe, does not depend on instanceof or mutable properties, and despite ES6 Symbol.toStringTag.",
+	"main": "index.js",
+	"exports": {
+		".": "./index.js",
+		"./package.json": "./package.json"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/inspect-js/is-data-view.git"
+	},
+	"keywords": [
+		"javascript",
+		"ecmascript",
+		"dataview",
+		"data",
+		"view",
+		"typedarray",
+		"typedarrays"
+	],
+	"author": "Jordan Harband <ljharb@gmail.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/inspect-js/is-data-view/issues"
+	},
+	"homepage": "https://github.com/inspect-js/is-data-view#readme"
+}
