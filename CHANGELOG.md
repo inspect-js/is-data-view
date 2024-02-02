@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.0.1](https://github.com/inspect-js/is-data-view/compare/v1.0.0...v1.0.1) - 2024-02-02
+
+### Commits
+
+- [patch] add types [`c2728ef`](https://github.com/inspect-js/is-data-view/commit/c2728ef20064bba2588eed503a0c2e36985b638a)
+- [Dev Deps] update `aud`, `available-typed-arrays`, `has-tostringtag`, `npmignore`, `object-inspect`, `tape` [`e7f9ebc`](https://github.com/inspect-js/is-data-view/commit/e7f9ebccf9aacdc112dd4f665271c96417ddfa64)
+- [Deps] update `is-typed-array` [`2ca9333`](https://github.com/inspect-js/is-data-view/commit/2ca9333516afac321431ddae02d6791d50e8d5c2)
+
 ## v1.0.0 - 2024-01-31
 
 ### Commits

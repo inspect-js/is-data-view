@@ -1,6 +1,6 @@
 {
 	"name": "is-data-view",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Is this value a JS DataView? This module works cross-realm/iframe, does not depend on `instanceof` or mutable properties, and despite ES6 Symbol.toStringTag.",
 	"main": "index.js",
 	"exports": {
