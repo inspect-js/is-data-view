@@ -43,7 +43,7 @@
 	},
 	"homepage": "https://github.com/inspect-js/is-data-view#readme",
 	"dependencies": {
-		"is-typed-array": "^1.1.12"
+		"is-typed-array": "^1.1.13"
 	},
 	"devDependencies": {
 		"@ljharb/eslint-config": "^21.1.0",
