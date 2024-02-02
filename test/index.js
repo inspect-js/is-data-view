@@ -12,13 +12,15 @@ var inspect = require('object-inspect');
 var availableTypedArrays = require('available-typed-arrays')();
 
 test('not DataViews', function (t) {
-	forEach(v.primitives.concat(
+	forEach([].concat(
+		// @ts-expect-error TS sucks at [].concat
+		v.primitives,
 		v.objects,
 		function () {},
 		generators,
 		arrowFns,
 		[]
-	), function (nonDV) {
+	), /** @type {(nonDV: unknown) => void} */ function (nonDV) {
 		t.equal(
 			isDataView(nonDV),
 			false,
@@ -37,8 +39,11 @@ test('not DataViews', function (t) {
 
 test('@@toStringTag', { skip: !hasToStringTag }, function (t) {
 	forEach(availableTypedArrays, function (typedArray) {
+		// @ts-expect-error
 		var fakeTypedArray = [];
+		// @ts-expect-error
 		fakeTypedArray[Symbol.toStringTag] = typedArray;
+		// @ts-expect-error
 		t.notOk(isDataView(fakeTypedArray), 'faked ' + typedArray + ' is not typed array');
 	});
 
@@ -49,7 +54,7 @@ test('Data Views', { skip: typeof DataView !== 'function' }, function (t) {
 	var ab = new ArrayBuffer(1);
 	var dv = new DataView(ab);
 
-	t.equal(isDataView(dv), true, inspect(dv) + 'is a DataView');
+	t.equal(isDataView(dv), true, inspect(dv) + ' is a DataView');
 
 	t.end();
 });

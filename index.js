@@ -7,11 +7,12 @@ var $DataView = GetIntrinsic('%DataView%', true);
 
 var callBound = require('call-bind/callBound');
 
+// node <= 0.10, < 0.11.4 has a nonconfigurable own property instead of a prototype getter
 var $dataViewBuffer = callBound('DataView.prototype.buffer', true);
 
 var isTypedArray = require('is-typed-array');
 
-// node <= 0.10, < 0.11.4 has a nonconfigurable own property instead of a prototype getter
+/** @type {import('.')} */
 module.exports = function isDataView(x) {
 	if (!x || typeof x !== 'object' || !$DataView || isTypedArray(x)) {
 		return false;
@@ -26,12 +27,6 @@ module.exports = function isDataView(x) {
 		}
 	}
 
-	/*
-	 * try {
-	 * new $DataView(x); // eslint-disable-line no-new
-	 * x is an ArrayBuffer
-	 * } catch (e) {
-	 */
 	if (
 		('getInt8' in x)
 			&& typeof x.getInt8 === 'function'
@@ -39,7 +34,6 @@ module.exports = function isDataView(x) {
 	) {
 		return true;
 	}
-	// }
 
 	return false;
 };
